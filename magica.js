@@ -1,7 +1,7 @@
 'use strict';
 
-var path = '/',
-    CACHE_NAME = 'bluesoft-v1';
+const path = '/',
+    CACHE_NAME = 'sw-v1';
 
 this.addEventListener('install', function(event) {
     // Instala app, adicionar os arquivos no cache
@@ -22,7 +22,7 @@ this.addEventListener('install', function(event) {
 });
 
 this.addEventListener('fetch', function(event) {
-    var response;
+    let response;
     event.respondWith(caches.match(event.request).then(function(r) {
         response = r;
         if(!response){
