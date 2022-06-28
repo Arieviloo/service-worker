@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Service Worker</title>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('magica.js').then(function(){
+                console.log('Tem Service Worker! :)');
+            }, function(err){
+                console.log('Deu ruim! :(', err);
+            });
+        } else {
+            console.error('Usa um browser melhor. :)');
+        }
+    </script>
+
+    <script src="app.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <h1>Service Worker</h1>
+
+
+    <a href="pagina-2.html">Página 2</a>
+    <a href="pagina-3.html">Página 3</a>
+</body>
+</html>
